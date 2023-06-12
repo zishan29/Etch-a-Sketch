@@ -22,10 +22,13 @@ function colorPixel() {
 createGrid(16);
 colorPixel();
 const input = document.querySelector(".input");
+const dimension = document.querySelector(".dimension");
 input.value = 16;
+dimension.textContent = `${input.value} x ${input.value}`
 input.addEventListener("input", (event) => {
   createGrid(event.target.value);
   colorPixel();
+  dimension.textContent = `${input.value} x ${input.value}`
 });
 
 const reset = document.querySelector("#reset");
@@ -33,6 +36,7 @@ reset.addEventListener('click', function() {
   createGrid(16);
   colorPixel();
   input.value = 16;
+  dimension.textContent = `${input.value} x ${input.value}`
 })
 
 const erase = document.querySelector("#erase");
